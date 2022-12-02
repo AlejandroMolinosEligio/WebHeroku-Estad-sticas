@@ -1,0 +1,149 @@
+<script>
+    import Button from 'sveltestrap/src/Button.svelte';
+    import UncontrolledAlert from "sveltestrap/src/UncontrolledAlert.svelte";
+    let errorC = 0;
+
+    async function LoadEntries(){
+        const res_pop = await fetch("/api/v2/population-levels/loadInitialData",
+			{
+				method: "GET"
+			}).then(function (res_pop){
+				//Código de Entradas cargadas con éxito
+				errorC = 200.4;
+			});
+        const res_int = await fetch("/api/v2/internet-population/loadInitialData",
+			{
+				method: "GET"
+			}).then(function (res_int){
+				errorC=200.4;
+			});
+        const res_enr = await fetch("/api/v2/energy-consumptions/loadInitialData", {
+                method: "GET",
+            }).then(function (res_enr) {
+                errorC = 200.4;
+            });
+    }
+
+</script>
+<main>
+    <br>
+    <div style="text-align: center;">
+        <h1 style="font-weight: bold;">WebHeroku-Stats</h1>
+    </div>
+    
+    <p style="font-weight: bold;">
+        - Project description: </p>
+        <p>Wstudio de la población en la actualidad(population-levels), Estudios sobre el consumo de energía(energy-consumptions), La relación entre usuarios en internet y la población urbana(internet-population).<br></p>
+    
+    <p style="font-weight: bold;">
+        - Repository: 
+    </p>
+    <a href="https://github.com/AlejandroMolinosEligio/WebHeroku-Stats">
+        [Enlace]
+    </a>
+    <p style="font-weight: bold;">
+        - URL:
+    </p>
+    <a href="http://sos2122-10.herokuapp.com/#/info">[http://sos2122-10.herokuapp.com]</a>
+    <a href="http://sos2122-10.herokuapp.com/#/analytics">[http://sos2122-10.herokuapp.com/#/analytics]</a>
+    <br>
+    <p style="font-weight: bold;">
+        -  Enlaces a API's:
+    </p>
+    <ul>
+        <li>
+            <ul>
+                <li>Docs:
+                    <ul>
+                        <li>API_V1:<a href="https://sos2122-10.herokuapp.com/api/v1/population-levels/docs">[https://sos2122-10.herokuapp.com/api/v1/population-levels/docs]</a></li>
+                        <li>API_V2:<a href="https://sos2122-10.herokuapp.com/api/v2/population-levels/docs">[https://sos2122-10.herokuapp.com/api/v2/population-levels/docs]</a></li>
+                    </ul>
+                </li>
+                <li>API:
+                    <ul>
+                        <li>API_v1:<a href="https://sos2122-10.herokuapp.com/api/v1/population-levels">[https://sos2122-10.herokuapp.com/api/v1/population-levels]</a></li>
+                        <li>API_v2:<a href="https://sos2122-10.herokuapp.com/api/v2/population-levels">[https://sos2122-10.herokuapp.com/api/v2/population-levels]</a></li>
+                    </ul>
+                </li>
+                <li>Front-end:
+                    <ul>
+                        <li>API_v2:<a href="https://sos2122-10.herokuapp.com/#/population-levels">[https://sos2122-10.herokuapp.com/#/population-levels]</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <ul>Vídeo: <a href="https://youtu.be/Dr8jhobYh_w">ENLACE</a></ul>
+                </li>
+            </ul>
+            <br>
+            (developed by <a href="https://github.com/AlejandroMolinosEligio">
+            [Alejandro Molinos Eligio]
+            
+        </a>)</li>
+
+        <br>
+        <li>
+            <ul>
+                <li>DOC:
+                    <ul>
+                        <li>API_V1:<a href="https://sos2122-10.herokuapp.com/api/v1/energy-consumptions/docs">[https://sos2122-10.herokuapp.com/api/v1/energy-consumptions/docs]</a></li>
+                        <li>API_V2:<a href="https://sos2122-10.herokuapp.com/api/v2/energy-consumptions/docs">[https://sos2122-10.herokuapp.com/api/v2/energy-consumptions/docs]</a></li>
+                    </ul>
+                </li>
+                <li>API:
+                    <ul>
+                        <li>API_v1:<a href="https://sos2122-10.herokuapp.com/api/v1/energy-consumptions">[https://sos2122-10.herokuapp.com/api/v1/energy-consumptions]</a></li>
+                        <li>API_v2:<a href="https://sos2122-10.herokuapp.com/api/v2/energy-consumptions">[https://sos2122-10.herokuapp.com/api/v2/energy-consumptions]</a></li>
+                    </ul>
+                </li>
+                <li>Front-end:
+                    <ul>
+                        <li>API_v2:<a href="https://sos2122-10.herokuapp.com/#/energy-consumptions">[https://sos2122-10.herokuapp.com/#/energy-consumptions]</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <ul>Vídeo: <a href="https://youtu.be/ecizfrV1toc">ENLACE</a></ul>
+                </li>
+            </ul>
+            <br>
+     </li>
+
+        <br>
+        <li>
+            <ul>
+                <li>DOC:
+                    <ul>
+                        <li>API_V1:<a href="https://sos2122-10.herokuapp.com/api/v1/internet-population/docs">[https://sos2122-10.herokuapp.com/api/v2/internet-population/docs]</a></li>
+                        <li>API_V2:<a href="https://sos2122-10.herokuapp.com/api/v2/internet-population/docs">[https://sos2122-10.herokuapp.com/api/v2/internet-population/docs]</a></li>
+                    </ul>
+                </li>
+                <li>API:
+                    <ul>
+                        <li>API_V1:<a href="https://sos2122-10.herokuapp.com/api/v1/internet-population">[https://sos2122-10.herokuapp.com/api/v2/internet-population]</a></li>
+                        <li>API_V2:<a href="https://sos2122-10.herokuapp.com/api/v2/internet-population">[https://sos2122-10.herokuapp.com/api/v2/internet-population]</a></li>
+                    </ul>
+                </li>
+                <li>Front-end:
+                    <ul>
+                        <li> <a href="https://sos2122-10.herokuapp.com/#/internet-population">[https://sos2122-10.herokuapp.com/#/internet-population]</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <ul>Vídeo: <a href="https://youtu.be/mV7zeGhS_M8">ENLACE</a></ul>
+                </li>
+            </ul>
+            <br>
+      </li>
+    </ul>
+    {#if errorC === 200.4}
+        <UncontrolledAlert  color="success" >
+			Datos cargados con éxito.
+        </UncontrolledAlert>
+    {/if}
+    <div style="text-align: center;">
+        <Button outline color="success" on:click="{LoadEntries}">
+        CARGAR TODOS LOS DATOS
+        </Button>
+    </div>
+    <br>
+
+</main>
